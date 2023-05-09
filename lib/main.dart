@@ -21,36 +21,32 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                counter++;
-              });
-            },
-            icon: Icon(Icons.mail),
-            color: Colors.black,
-          ),
-          Text(
-            '$counter',
-            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-          ),
-          Text('data')
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            counter++;
-          });
-        },
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.amber,
-        child: Icon(
-          Icons.add,
-          size: 30.0,
+      body: Padding(
+        padding: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'https://avatars.githubusercontent.com/u/67730126?v=4'),
+              backgroundColor: Colors.black12,
+              radius: 70,
+            ),
+            const Divider(
+              height: 20.0,
+            ),
+            Row(
+              children: const [
+                Icon(Icons.mail),
+                Text(
+                  ' mniroee@gmail.com',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            const Text('data'),
+          ],
         ),
       ),
     );
