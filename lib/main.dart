@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
@@ -9,14 +11,27 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int counter = 5;
+  List<String> skills = [
+    'PHP',
+    'Javascript',
+    'Laravel',
+    'HTML',
+    'CSS',
+    'sass',
+    'Bootstrap',
+    'Tailwind',
+    'vue.js',
+    'Ajax',
+    'PHP unit'
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Colors.grey[850],
       appBar: AppBar(
-        title: const Text('Hey!!!'),
-        foregroundColor: Colors.black,
+        title: const Text('Milad Niroee'),
+        foregroundColor: Colors.grey[200],
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -34,18 +49,78 @@ class _HomeState extends State<Home> {
               radius: 70,
             ),
             const Divider(
-              height: 20.0,
+              height: 40.0,
+              thickness: 1,
+              color: Colors.white12,
             ),
+            const Text(
+                'Contact info:',
+              style: TextStyle(
+                color: Colors.grey
+              ),
+            ),
+            const SizedBox(height: 10),
             Row(
               children: const [
-                Icon(Icons.mail),
+                Icon(
+                  Icons.mail,
+                  color: Colors.amberAccent,
+                ),
                 Text(
                   ' mniroee@gmail.com',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amberAccent),
                 ),
               ],
             ),
-            const Text('data'),
+            const SizedBox(height: 20),
+            Row(
+              children: const [
+                Icon(
+                  Icons.link,
+                  color: Colors.amberAccent,
+                ),
+
+                Text(
+                  ' https://github.com/miladniroee',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amberAccent),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: const [
+                Icon(
+                  Icons.phone,
+                  color: Colors.amberAccent,
+                ),
+                Text(
+                  ' +98 937-5366605',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.amberAccent),
+                ),
+              ],
+            ),
+            const Divider(
+              height: 40.0,
+              thickness: 1,
+              color: Colors.white12,
+            ),
+            const Text(
+              'Skills:',
+              style: TextStyle(
+                  color: Colors.grey
+              ),
+            ),
+            const SizedBox(height: 10),
+            ...this.skills.map((skill) => Text(skill, style: const TextStyle(color: Colors.amberAccent),)).toList()
           ],
         ),
       ),
