@@ -28,8 +28,7 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/67730126'),
+              backgroundImage: AssetImage('assets/images/67730126.jpg'),
               backgroundColor: Colors.black12,
               radius: 70,
             ),
